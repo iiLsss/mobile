@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>百分比适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    div {
+      width: 25%;
+      height: 100px;
+      float: left;
+    }
+    
+    div:nth-child(1) {
+      background-color: red
+    }
+    
+    div:nth-child(2) {
+      background-color: green
+    }
+    
+    div:nth-child(3) {
+      background-color: blue
+    }
+    
+    div:nth-child(4) {
+      background-color: pink
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <!-- 
+      百分比布局问题
+       1.百分比的值不好计算
+       2.需要确定父级的大小，因为要根据父级的大小进行计算
+       3.宽度可以设置，但是高度不好设置
+       一般情况下百分比布局是需要配合其他的布局面用
+
+   -->
+</body>
+
+</html>

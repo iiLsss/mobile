@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>比例缩放适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    div {
+      width: 25%;
+      height: 100px;
+      float: left;
+    }
+    
+    div:nth-child(1) {
+      background-color: red
+    }
+    
+    div:nth-child(2) {
+      background-color: green
+    }
+    
+    div:nth-child(3) {
+      background-color: blue
+    }
+    
+    div:nth-child(4) {
+      background-color: pink
+    }
+  </style>
+  <script>
+    (function() {
+      /* 
+            iphone6 plus 
+            原来的尺寸  curWidth     414 
+            要变的尺寸  targetWidth  375（iphone） 
+            比例        scale   
+
+            414/比例 = 375
+            比例 = 414/375
+            比例 = curWidth/targetWidth;
+      */
+      var curWidth = window.screen.width;
+      var targetWidth = 375;
+      var scale = curWidth / targetWidth;
+      var meta = document.createElement('meta');
+      meta.name = 'viewport'
+      meta.content = 'initial-scale=' + scale + ',minimun-scale=' + scale + ',maximum-scale=' + scale;
+      document.head.appendChild(meta)
+    })()
+  </script>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <!-- 
+      比例缩放适配 把所有机型的设备独立像素设置成一致的（以前淘宝用的是何种方法）
+      1、viewport需要通过js动态的设置（不能直接把device的值设置成数值）
+      2、通过设置比例（初始比例以及缩放比例），把宽度缩放成一致的
+      注意：viewport里给了缩放的值以后，最终的页面的宽度是拿原来的值除以缩放比例，而不是乘以缩放比例
+
+      缺点：
+      1、就像在讲viewport设置宽度的时候，可以吧宽度设置成固定值，会出现所有的手机看上去都是同样的大小，没有分别了，不太好
+      2.算出的值在一些有小数的情况下可能会出现误差（无关紧要），因为设备独立像素不能有小数
+
+   -->
+</body>
+
+</html>

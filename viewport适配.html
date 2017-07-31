@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>viewport适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    div {
+      width: 25%;
+      height: 100px;
+      float: left;
+    }
+    
+    div:nth-child(1) {
+      background-color: red
+    }
+    
+    div:nth-child(2) {
+      background-color: green
+    }
+    
+    div:nth-child(3) {
+      background-color: blue
+    }
+    
+    div:nth-child(4) {
+      background-color: pink
+    }
+  </style>
+  <script>
+    (function() {
+      /* 
+        320/scale = 640    
+        375/scale = 750    
+      */
+      var scale = 1 / window.devicePixelRatio;
+      var meta = document.createElement('meta');
+      meta.name = 'viewport'
+      meta.content = 'initial-scale=' + scale + ',minimun-scale=' + scale + ',maximum-scale=' + scale;
+      document.head.appendChild(meta)
+    })()
+  </script>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <!-- 
+      viewport适配 根据dpi的值，把视口进行缩放，缩放到物理像素，也就是把屏幕的尺寸直接设置成它的对应的物理像素。
+      http://m.taobao.com 淘宝再用 不过他只处理了dpi为2的几个设置，以及iphone6 plus 
+
+      缺点：
+      1、这种方法有时候不准确，不如dpi不为证书的时候，会出现除不尽的情况，那缩放的倍数就会出现很长的小数，再去算物理像素的时候就会有误差
+      2、如果屏幕的分辨率是非标准的话，算出的物理像素就是非标准的
+   -->
+</body>
+
+</html>

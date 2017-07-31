@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rem适配</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    div {
+      width: 4rem;
+      height: 100px;
+      float: left;
+    }
+    
+    div:nth-child(1) {
+      background-color: red
+    }
+    
+    div:nth-child(2) {
+      background-color: green
+    }
+    
+    div:nth-child(3) {
+      background-color: blue
+    }
+    
+    div:nth-child(4) {
+      background-color: pink
+    }
+  </style>
+  <script>
+    (function() {
+      var html = document.documentElement;
+      var width = html.getBoundingClientRect().width;
+
+      html.style.fontSize = width / 16 + "px"
+        // iphone5下 1rem = 20px 
+    })()
+  </script>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <!-- 
+    rem布局
+     1、必需动态的去设置html的大小，才能适配
+     2、根据页面（注意：是psd图，也就是真实大小）的宽度除以一个系数，把算出的这个值赋给html的font-size属性
+        1、为什么要除以一个数字，原因是：一个页面里，不可能全都是整屏的元素，肯定有一行中放多个元素。所以就把一行分成n份
+        2、不除一个数字的话，那1个rem就是屏幕的宽度，这个值太大，如果一个元素的宽度比它小的话就不方便计算。
+        3、这个系数，自己定，多少都可以，但是建议给一个能整除的值
+    特点：
+    1、所有单位的属性会根据屏幕的尺寸自动计算大小
+    2、同样一个元素，在不同的设备下的大小是不一样的。在尺寸小的设备下显示的下，在尺寸大的设备下显示的大。
+    3、一般以iphone6为基准，以它的宽度750除以一个系数，再去算rem
+   -->
+</body>
+
+</html>

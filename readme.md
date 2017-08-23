@@ -2,16 +2,19 @@
 
 #### 1、移动端简介
 
+1. 
+
 #### 2、移动端测试环境
 
-1. pc端chrome模拟环境测试
+1. pc端模拟环境测试
 
     chrome调试台进行测试
-2. 真机测试（手机与电脑里文件关联方法）
 
-    本人常用 ngrok进行映射
+2. 真机测试
 
-    [更多方法][https://www.zhihu.com/question/20322475]
+    本人常用 [ngrok](https://www.ngrok.cc/ 'ngrok官网')进行映射
+
+    [更多方法](https://www.zhihu.com/question/20322475 '知乎question')
 
 #### 3、像素概念
 

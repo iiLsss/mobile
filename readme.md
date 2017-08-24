@@ -46,24 +46,21 @@
 
 viewport的各个参数的概念以及设置方式
 
-![viewport](.\img\viewport.jpg)
-
-#### 5、像素比
-
-像素比与设计图的关系
+![viewport](./img/viewport.jpg)
  
 ## 移动端适配方案
 
-1. 百分比适配
-2. viewport适配（两种适配方案）
-3. rem适配（两种适配方案）
+1. [百分比适配](https://github.com/iiLsss/mobile/blob/master/%E7%99%BE%E5%88%86%E6%AF%94%E9%80%82%E9%85%8D.html)
+2. [viewport适配](https://github.com/iiLsss/mobile/blob/master/viewport%E9%80%82%E9%85%8D.html)（两种适配方案）
+3. [rem适配](https://github.com/iiLsss/mobile/blob/master/rem%E9%80%82%E9%85%8D.html)（两种适配方案）
 4. 弹性布局适配
 5. 移动端布局中的注意问题
   1、body的overflow问题
   2、固定定位问题
 6. 移动端样式重置
 
-淘宝的viewport设置
+
+- 淘宝的viewport设置
 window.devicePixelRatio 屏幕像素比
 ```
 (function() {
@@ -74,7 +71,9 @@ window.devicePixelRatio 屏幕像素比
   document.head.appendChild(meta)
 })()
 ```
-rem适配
+
+- rem适配
+
 ```
 (function() {
   var html = document.documentElement;
@@ -83,7 +82,9 @@ rem适配
     // iphone5下 1rem = 20px 
 })()
 ```
-样式重置
+
+- 样式重置
+
 ```
 body {
   font-family: Helvetica;

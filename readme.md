@@ -116,4 +116,99 @@ input {
   outline: none;
   vertical-align: middle;
 }
+
+    html {
+        /*  font-size: 62.5%;为了更好的计算，兼容更多不同分辨率的屏幕，使用js计算根节点字体大小*/
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        /* 禁止出现滚动条影响美观 */
+        -webkit-transform: translate3d(0, 0, 0);
+        /*  在部分android机型的微信环境中会出现事件无法触发、表单无法输入的情况，我们针对需要输入或者触发事件的元素设置样式：
+        -webkit-transform: translate3d(0,0,0) ，不过新版本的微信已经直接修复了该问题,仅仅为了兼容低版本微信。 */
+    }
+    body {
+        font-size: 0.14rem;
+        /* 14÷100=0.14*/
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        /* 禁止出现滚动条影响美观 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* 解决微信下vue获取内容的bug */
+        font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        /*使用无衬线字体*/
+        -webkit-text-size-adjust: 100%!important;
+        /*禁止IOS调整字体大小*/
+    }
+    html,
+    body {
+        -webkit-user-select: none;
+        /*禁止选中文本*/
+        user-select: none;
+    }
+    /* 去掉浏览器各种蛋疼的好丑的样式 */
+    a,
+    img {
+        -webkit-touch-callout: none;
+        /*禁止长按链接与图片弹出菜单*/
+        border: 0 none;
+        /* 1 */
+        width: auto;
+        /* 2 */
+        height: auto;
+        /* 3 */
+        max-width: 100%;
+        /* 4 */
+        vertical-align: top;
+        /* 5 */
+        -ms-interpolation-mode: bicubic;
+        /* 6 */
+    }
+    @media only screen and (min-width: 1024px) {
+        /* 表明是PC端就固定字体大小,默认16px ,浏览器默认大小就是16px*/
+        body {
+            font-size: 16px !important;
+            overflow: auto !important;
+        }
+    }
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        -webkit-appearance: none;
+        /*去掉webkit默认的表单样式*/
+    }
+    a,
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+    }
+    input::-webkit-input-placeholder {
+        color: #ccc;
+        /*修改webkit中input的planceholder样式*/
+        /*   placeholder的文字在ios下可以换行，android不行 */
+    }
+    input:focus::-webkit-input-placeholder {
+        color: #f00;
+        /*修改webkit中focus状态下input的planceholder样式*/
+    }
+    input::-webkit-input-speech-button {
+        display: none;
+        /*隐藏Android的语音输入按钮*/
+    }
+    #text {
+        border: 1px solid red;
+        width: 3.2rem;
+        height: 3.2rem;
+        font-size: 0.4rem;
+    }
+    </style>
 ```
